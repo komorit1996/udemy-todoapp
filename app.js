@@ -14,7 +14,8 @@ app.use("/api/v1/tasks", taskRouter)
 
 const start = async () => {
     try {
-        await connectDB(process.env.MONGO_URL || process.env.MONGO_VERCEL_URL);
+        // await connectDB(process.env.MONGO_URL || process.env.MONGO_VERCEL_URL);
+        await connectDB(process.env.MONGO_VERCEL_URL);
         app.listen(PORT, console.log("launch server !!! : http://localhost:8080 http://localhost:8080/api/v1/tasks"));
     } catch (err) {
         console.log(err);
